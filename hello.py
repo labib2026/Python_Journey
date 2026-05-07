@@ -520,6 +520,7 @@ a, b = b , a
 print("a = ",a)
 print("b = ",b)
 '''
+'''
 #tuto 50 (Introduction to OOP | class and object)
 class student:
     roll = ""
@@ -534,3 +535,54 @@ karim = student()
 karim.roll= 102
 karim.gpa = 4.0
 print(f"Roll : {karim.roll}, Gpa : {karim.gpa}")
+'''
+'''
+# tuto 51 (Introducing Methods)
+class student:
+    roll = ""
+    gpa = ""
+    def set_value(self,roll,gpa):
+        self.roll = roll
+        self.gpa = gpa
+
+    def display(self):
+        print(f"Roll : {self.roll} , Gpa : {self.gpa}")
+
+rahim = student()
+rahim.set_value(101,4.75)
+rahim.display()
+'''
+'''
+# tuto 52 (Constructors)
+class student:
+    roll = ""
+    gpa = ""
+
+    def __init__(self, roll,gpa):
+        self.roll = roll
+        self.gpa = gpa
+
+    def display(self):
+            print(f"Roll : {self.roll}, Gpa : {self.gpa}")
+
+rahim = student(101,5)
+rahim.display()
+'''
+'''
+# tuto 53 (Exercise) by creating class and object with constructor
+class triangle:
+    base = ""
+    height = ""
+    def __init__(self, base,height):
+        self.base  = base
+        self.height = height
+    def area(self):
+        area = 0.5 * self.base * self.height
+        print("Area = ",area)
+t1 = triangle(10,20)
+t1.area()
+
+t2 = triangle(20,30)
+t2.area()
+'''
+
