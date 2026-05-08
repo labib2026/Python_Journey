@@ -585,4 +585,56 @@ t1.area()
 t2 = triangle(20,30)
 t2.area()
 '''
+'''
+# tuto 54 (Inheritance)
+class phone:
+    def call(self):
+        print("You can call")
+    def massage(self):
+        print("Youu can massage")
+
+class samsung(phone): # inheritance
+    def photo(self):
+        print("You can take photo")
+s = samsung()
+s.call()
+s.massage()
+s.photo()
+print(issubclass(samsung,phone))
+'''
+'''
+# tuto 55 (Method Overriding)
+class phone():
+    def __init__(self):
+        print("I in super class")
+class samsung(phone):
+    def __init__(self):
+        super().__init__() 
+        print("I am in samsung class")
+
+s = samsung()
+'''
+# tuto 56 (A practical example of inheritance)
+class shape:
+    def __init__(self,dim1,dim2):
+        self.dim1 = dim1
+        self.dim2 = dim2
+    def area(self):
+        print("area of shape")
+
+class triangle(shape):
+    def area(self):
+        area = 0.5 * self.dim1 * self.dim2
+        print("area of triangle =" ,area)
+class rectengle(shape):
+    def area(self):
+        area = self.dim1 * self.dim2
+        print("area of rectengle = ",area)
+t1 = triangle(20,10)
+t1.area()
+t2 = rectengle(20,10)
+t2.area()
+        
+
+
 
