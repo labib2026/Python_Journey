@@ -634,7 +634,7 @@ t1 = triangle(20,10)
 t1.area()
 t2 = rectengle(20,10)
 t2.area()
-        
+    
 
 
 
