@@ -614,6 +614,7 @@ class samsung(phone):
 
 s = samsung()
 '''
+'''
 # tuto 56 (A practical example of inheritance)
 class shape:
     def __init__(self,dim1,dim2):
@@ -634,7 +635,74 @@ t1 = triangle(20,10)
 t1.area()
 t2 = rectengle(20,10)
 t2.area()
-    
+'''
+'''
+# tuto 57 (Types Of Inheritance)
+#Multi-level Inheritance=
+class A:
+    def display1(self):
+        print("I am in inside in A class")
+class B(A):# a class inharitation
+    def display2(self):
+        print("I am in inside in B class")
+class C(B):# a,b class inharitation
+    def display3(self):
+        super().display1()
+        super().display2()
+        print("I am in inside in C class")
+T1 = C()
+T1.display3()
+#Multiple Inheritance
+class A:
+    def display(self):
+        print("I am in inside in A class")
+class B:
+    def display(self):
+        print("I am in inside in B class")
+class C(A,B):
+    pass
+t1 = C()
+t1.display()
+'''
+'''
+# tuto 58(Abstraction)
 
+from abc import ABC,abstractmethod
+class shape(ABC):
+    def __init__(self ,dim1,dim2):
+        self.dim1 = dim1
+        self.dim2 = dim2
+    @abstractmethod
+    def area(self):
+        pass
 
+class Triangle(shape):
+    def area(self):
+        area = 0.5 * self.dim1 * self.dim2
+        print("Area of triangle : ",area)
+class Rectangle(shape):
+    def area(self):
+        area = self.dim1 * self.dim2
+        print("Area of Rectangle :",area)
+t1 = Triangle(20,30)
+t1.area()
+r2 = Rectangle(50,30)
+r2.area()
+'''
+# tuto 59 (Polymorphism)
+print(len("LABIB"))
+print(len([1,2,3,4,5]))
 
+class device:
+    def __init__(self,model):
+        self.model = model
+class phone(device):
+    def __init__(self, model, chipset):
+        super().__init__(model)
+        self.chipset = chipset
+    def display(self):
+        print(f"This is {self.model} and powered with {self.chipset}")
+p1 = phone("Samsung Galaxy S21", "Snapdragon 888")
+p1.display()
+
+        
