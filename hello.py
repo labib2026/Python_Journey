@@ -689,6 +689,7 @@ t1.area()
 r2 = Rectangle(50,30)
 r2.area()
 '''
+'''
 # tuto 59 (Polymorphism)
 print(len("LABIB"))
 print(len([1,2,3,4,5]))
@@ -704,5 +705,48 @@ class phone(device):
         print(f"This is {self.model} and powered with {self.chipset}")
 p1 = phone("Samsung Galaxy S21", "Snapdragon 888")
 p1.display()
+'''
+# tuto 60 (Magic methods)
+class bike:
+    def __init__(self,name,color):
+        self.name = name
+        self.color = color
 
-        
+    def __eq__(self, other):# equality magic method 
+        return self.name == other.name and self.color == other.color;
+    def __str__(self): # string magic method
+        return(f"Name = {self.name}, Color = {self.color}")
+
+    def display(self):
+        print(f"Name = {self.name}, Color = {self.color}")
+d1 = bike("Yamaha R15", "Blue")
+d2 = bike("Yamaha R15","Blue")
+print(d1==d2)
+# tuto 61 (Creating your own Module)
+from Cw import Triangle_area,Rectangle_area
+Triangle_area(7,8)
+Rectangle_area(8,7)
+# tuto 62 (Regular expressions)
+import re
+color = r"red"
+if re.search(color,"i love blue color"):
+    print("matched")
+else:
+    print("not matched")
+color = r"red"
+if re.match(color,"i love red color"):
+    print("matched")
+else:
+    print("not matched")
+color = r"red"
+if re.findall(color,"i love red color"):
+    print("matched")
+else:
+    print("not matched")
+color = r"red"
+text = r"i like red color"
+match = re.search(color,text)
+if match:
+    print(match.start())
+    print(match.end())
+    print(match.span())
