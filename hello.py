@@ -706,6 +706,7 @@ class phone(device):
 p1 = phone("Samsung Galaxy S21", "Snapdragon 888")
 p1.display()
 '''
+'''
 # tuto 60 (Magic methods)
 class bike:
     def __init__(self,name,color):
@@ -722,10 +723,14 @@ class bike:
 d1 = bike("Yamaha R15", "Blue")
 d2 = bike("Yamaha R15","Blue")
 print(d1==d2)
+'''
+'''
 # tuto 61 (Creating your own Module)
 from Cw import Triangle_area,Rectangle_area
 Triangle_area(7,8)
 Rectangle_area(8,7)
+'''
+'''
 # tuto 62 (Regular expressions)
 import re
 color = r"red"
@@ -750,3 +755,47 @@ if match:
     print(match.start())
     print(match.end())
     print(match.span())
+'''
+'''
+# tuto 63 (Search And Replace)
+import re
+pattern = r"colour"
+text = "I like black colour and as well blue colour"
+text2 = re.sub(pattern,"color",text,count=1) # count 1 mean ekta specific pattern ke change kore print korbe 2 hole duita...
+print(text2)
+'''
+'''
+# tuo 64 (Meta Characters)
+import re
+pattern = r"^colo.r$" #dot,^(character dot er age ei chinno dile pattern e oi character must thaka lagbe),$(eita character er shese) meta character
+if re.search(pattern,"colour"):
+    print("matched")
+import re
+pattern = r"(a)*" # 0 or more than specific character for searchin or finding in re (*astrisk)
+if re.search(pattern,"colour"):
+    print("matched")
+import re
+pattern = r"u+" # ekhane u ek ba tar odhik thakle match dekhabe otherwise not matched hobe
+if re.search(pattern,"colour"):
+    print("matched")
+else:
+    print("not matched")
+import re
+pattern = r"ice(-)?cream" # ekhane ? dewar karon kew jodi word er (-) na dey tobe print korbe ar dilew print korbe but ek odhik dile print korbe na
+if re.search(pattern,"ice-cream"):
+    print("matched")
+else:
+    print("not matched")
+import re 
+pattern = r"a{1,3}$" # charly bracets jekono word,character pattern er jonno nirdishto perameter set kora jabe
+if re.search(pattern,"aaa"):
+    print("matched")
+else:
+    print("not matched")
+'''
+# tuto 65 (Character Class)
+import re 
+pattern = r"[a-z][A-Z][0-9]" # creating my own character or number and its expandalble
+if re.match(pattern,"aA9jsiunsudbdujsbsusbsjsg"):
+    print("matched")
+

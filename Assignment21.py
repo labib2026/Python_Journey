@@ -20,7 +20,6 @@ print(f"Total vat is: {calc_tool.total(40)}")
 #task 3 (Regular Expressions (The Security Scanner))
 import re
 text = "My number is 01742196198 and his number is 01800000000"
-# \d{11} মানে হলো টানা ১১টি সংখ্যা খুঁজবে
 numbers = re.findall(r"\d{11}", text) 
 print(numbers) 
 
