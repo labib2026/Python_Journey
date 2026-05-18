@@ -1,0 +1,1 @@
+"Device: Redmi Note 14 5G, Build: HyperOS_3.1, Memory_Address: 0x7e2d, Admin_Email: labib9690@gmail.com"
